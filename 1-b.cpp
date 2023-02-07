@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 #include <chrono>
+#include <fstream>
 
 using namespace std;
 
@@ -7,12 +8,16 @@ using namespace std;
 int main(){
     int n=100000;
     int arr[n];
+
+    ofstream outdata;
+    outdata.open("ArrValues.txt");
     
     //random values filling
     for(int i=0;i<n;i++)
     {
         arr[i] = rand() % n;
-        // cout<<arr[i]<<endl;
+        outdata<<arr[i]<<", ";
+        // cout<<arr[i]<<", ";
     }
     int copyarr[n];
     copy(arr,arr+n,copyarr);
@@ -34,7 +39,7 @@ int main(){
             }
         }
         auto end = chrono::high_resolution_clock::now();
-        cout<<"\n"<<i/100<<"\t"<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"\t";
+        cout<<"\n"<<i/100<<","<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<",";
 
         //Selection Sort
         start = chrono::high_resolution_clock::now();
