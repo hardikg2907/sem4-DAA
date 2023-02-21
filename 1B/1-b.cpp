@@ -46,8 +46,8 @@ int main(){
         for(int j=0;j<i-2;j++)
         {
             //finding the smallest element
-            int min = j+1;
-            for(int k=j+2;k<i;k++)
+            int min = j;
+            for(int k=j+1;k<i;k++)
             {
                 min=copyarr[min]>copyarr[k]?k:min;
             }

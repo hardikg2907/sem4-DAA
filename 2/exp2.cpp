@@ -107,7 +107,7 @@ int main(){
     int arr[n];
 
     ofstream outdata;
-    outdata.open("output.csv");
+    // outdata.open("output.csv");
     
     //random values filling
     for(int i=0;i<n;i++)
@@ -118,6 +118,16 @@ int main(){
     }
     int copyarr[n];
     copy(arr,arr+n,copyarr);
+    // for(int i=51000;i<=51005;i++)
+    // {
+    //     cout<<arr[i]<<"\n";
+    // }
+    for(int i=10000;i<n;i+=10000){
+            for(int j=i;j<i+10;j++){
+                cout<<arr[j]<< " ";
+            }
+            cout<<endl;
+        }
 
     for(int i=100;i<=n;i+=100)
     {   
@@ -125,13 +135,15 @@ int main(){
         auto start = chrono::high_resolution_clock::now();
         mergeSort(arr,0,i-1);
         auto end = chrono::high_resolution_clock::now();
-        outdata<<"\n"<<i/100<<","<<chrono::duration_cast<chrono::microseconds>(end - start).count()<<",";
+        // cout<<"\n"<<i/100<<","<<chrono::duration_cast<chrono::microseconds>(end - start).count()<<",";
 
         //Selection Sort
         start = chrono::high_resolution_clock::now();
         quicksort(copyarr,0,i-1);
         end = chrono::high_resolution_clock::now();
-        outdata<<chrono::duration_cast<chrono::microseconds>(end - start).count();
+        // cout<<chrono::duration_cast<chrono::microseconds>(end - start).count();
+
     }    
+
 
 }
