@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+int n = 0;
+
 void printSolution(int n, int board[n][n])
 {
     for (int i = 0; i < n; i++)
@@ -84,7 +86,6 @@ void solveNQueens(int n)
 
 int main()
 {
-    int n = 0;
     printf("\nEnter the dimension of the chessboard : ");
     scanf("%d", &n);
     solveNQueens(n);
